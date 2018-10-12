@@ -1,0 +1,7 @@
+@uri=http://localhost:3000/
+
+###
+GET {{uri}} 
+
+###
+POST {{uri}}users/sign_in
