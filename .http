@@ -56,3 +56,13 @@ Authorization: Bearer {{token}}
 GET {{uri}}topics
 Content-Type: application/json
 Authorization: Bearer {{token}}
+
+### topic create
+POST {{uri}}topics
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "title": "title1",
+    "body": "body1body1"
+}
