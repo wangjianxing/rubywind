@@ -1,12 +1,15 @@
 @uri=http://localhost:3000/api/
+@token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNTM5NDQyMzMyLCJleHAiOjE1Mzk0NDU5MzIsImp0aSI6IjNmZWIyNzBhLWY2MGEtNDRkYy1iMmQ1LTAxMWI4ZmYxYjgxYyJ9.xc52Z8KEJBpKG1q-435jEiTz4c5QL7Q62FX3yNTMuF8
 
 ###
 GET {{uri}} 
 
-###
+### user show
 GET {{uri}}users/current
+Content-Type: application/json
+Authorization: Bearer {{token}}
 
-###
+### login
 POST  {{uri}}users/sign_in
 Content-Type: application/json
 
@@ -17,3 +20,39 @@ Content-Type: application/json
         "password": "Ok123456"
     }
 }
+
+### logout
+DELETE  {{uri}}users/sign_out
+Content-Type: application/json
+
+### register user
+POST  {{uri}}users
+Content-Type: application/json
+
+{
+    "user": 
+    {
+        "email": "man3116@163.com",
+        "password": "Ok123456",
+        "password_confirmation": "Ok123456"
+    }
+}
+
+### user update password
+PATCH  {{uri}}users
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "user": 
+    {
+        "current_password": "12345678",
+        "password": "Ok123456",
+        "password_confirmation": "Ok123456"
+    }
+}
+
+### topic index
+GET {{uri}}topics
+Content-Type: application/json
+Authorization: Bearer {{token}}
