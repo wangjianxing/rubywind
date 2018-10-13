@@ -1,7 +1,19 @@
-@uri=http://localhost:3000/
+@uri=http://localhost:3000/api/
 
 ###
 GET {{uri}} 
 
 ###
-POST {{uri}}users/sign_in
+GET {{uri}}users/current
+
+###
+POST  {{uri}}users/sign_in
+Content-Type: application/json
+
+{
+    "user": 
+    {
+        "email": "man3115@163.com",
+        "password": "Ok123456"
+    }
+}
