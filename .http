@@ -1,6 +1,6 @@
 @uri=http://localhost:3000/api/
 
-@token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNTM5NDk2NjQwLCJleHAiOjE1Mzk1MDAyNDAsImp0aSI6IjIxNjU5ZmNjLTZhYzEtNDEyNy1hYTY5LTQyZGI1NDZiMGQ2NCJ9.2moDrvsRUue3vC6MOnZNingiYJpT0da3nWfxhOBhsB4
+@token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNTM5NTA2MjMxLCJleHAiOjE1Mzk1MDk4MzEsImp0aSI6IjQ3YzIwNDc4LWE4ZTMtNDg2YS1hNGE0LWM5ZjhkZDNkNmYxYiJ9.yt8ts0oKp2BoYWmEi_us6tWCGEnfkI9Fe4E1TyQHY1E
 
 ###
 GET {{uri}} 
@@ -84,5 +84,36 @@ Authorization: Bearer {{token}}
 
 ### topic delete
 DELETE {{uri}}topics/2
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+### reply index
+GET {{uri}}topics/1/replies
+Content-Type: application/json
+
+### reply create
+POST {{uri}}topics/1/replies
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "body": "reply1reply1"
+}
+
+### reply update
+PUT {{uri}}topics/1/replies/1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "body": "reply1reply111111111"
+}
+
+### reply show
+GET {{uri}}replies/1
+Content-Type: application/json
+
+### reply delete
+DELETE {{uri}}replies/3
 Content-Type: application/json
 Authorization: Bearer {{token}}
