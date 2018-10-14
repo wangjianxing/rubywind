@@ -22,6 +22,18 @@ class TopicsController < ApplicationController
       end
     end
 
+    def update
+      if @topic.update(topic_params)
+        render json: @topic
+      end
+    end
+
+    def destroy
+      @topic.destroy
+
+      render json: @topic
+    end
+
     protected
 
     def topic_params
