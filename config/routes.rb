@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       resources :replies, except: [:show, :destroy]
     end
     resources :replies, only: [:show, :destroy]
-    devise_for :users, controllers: { sessions: 'sessions' }
+    devise_for :users, controllers: { sessions: 'sessions' }, :skip => :passwords
     devise_scope :user do
       get 'users/current', to: 'sessions#show'
     end
