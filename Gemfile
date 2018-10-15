@@ -28,6 +28,7 @@ gem 'rack-cors'
 # My gems
 gem 'devise'
 gem 'devise-jwt', '~> 0.5.8'
+gem 'active_model_serializers'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
