@@ -20,13 +20,13 @@ class RepliesController < ApplicationController
     @topic = Topic.find(params[:topic_id])
     @reply = @topic.replies.build(reply_params)
     @reply.user_id = current_user.id
-    if @reply.save
+    if @reply.save!
       render json: @reply
     end
   end
 
   def update
-    if @reply.update(reply_params)
+    if @reply.update!(reply_params)
         render json: @reply
       end
   end

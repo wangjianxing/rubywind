@@ -17,13 +17,13 @@ class TopicsController < ApplicationController
 
     def create
       @topic = current_user.topics.build(topic_params)
-      if @topic.save
+      if @topic.save! #save! for raise validation errors
         render json: @topic
       end
     end
 
     def update
-      if @topic.update(topic_params)
+      if @topic.update!(topic_params)
         render json: @topic
       end
     end
