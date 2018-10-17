@@ -58,6 +58,10 @@ GET {{uri}}topics
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
+{
+    "page": 1
+}
+
 ### topic create
 POST {{uri}}topics
 Content-Type: application/json
@@ -90,6 +94,10 @@ Authorization: Bearer {{token}}
 ### reply index
 GET {{uri}}topics/1/replies
 Content-Type: application/json
+
+{
+    "page": 2
+}
 
 ### reply create
 POST {{uri}}topics/1/replies

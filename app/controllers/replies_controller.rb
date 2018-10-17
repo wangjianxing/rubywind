@@ -3,11 +3,9 @@ class RepliesController < ApplicationController
   before_action :find_my_reply, only: [:update, :destroy]
 
   def index
-    @replies = Topic.find(params[:topic_id]).replies
+    @replies = Topic.find(params[:topic_id]).replies.paginate(page: params[:page], per_page: 20)
     
-    if @replies
-        render json: @replies
-    end
+    render json: @replies
   end
 
   def show

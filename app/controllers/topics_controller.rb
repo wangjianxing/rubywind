@@ -3,10 +3,9 @@ class TopicsController < ApplicationController
     before_action :find_my_topic, only: [:update, :destroy]
 
     def index
-      @topics = Topic.all
-      if @topics
-        render json: @topics
-      end
+      @topics = Topic.paginate(page: params[:page], per_page: 20)
+      
+      render json: @topics
     end
 
     def show
